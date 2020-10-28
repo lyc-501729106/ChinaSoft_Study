@@ -53,4 +53,16 @@ public class TuserService {
             System.out.println(stus.getStuid());
         }
     }
+
+    public static void main(String[] args) {
+        ApplicationContext context = new
+                ClassPathXmlApplicationContext("com/etc/spring/jdbc.xml");
+        TuserService ts = (TuserService) context.getBean("tuserService");
+        List<Student> students = ts.students();
+        for (Student stus :
+                students) {
+            System.out.println("stuname: " + stus.getStuname());
+            System.out.println(stus.getStuid());
+        }
+    }
 }

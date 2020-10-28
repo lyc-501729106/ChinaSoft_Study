@@ -1,6 +1,9 @@
 package com.etc.spring.dao;
 
 import com.etc.spring.entity.Student;
+import com.etc.spring.service.TuserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -74,5 +77,16 @@ public class TuserDao {
                     }
                 }
         );
+    }
+    public static void main(String[] args) {
+        ApplicationContext context = new
+                ClassPathXmlApplicationContext("com/etc/spring/jdbc.xml");
+        TuserService ts = (TuserService) context.getBean("tuserService");
+        List<Student> students = ts.students();
+        for (Student stus :
+                students) {
+            System.out.println("stuname: " + stus.getStuname());
+            System.out.println(stus.getStuid());
+        }
     }
 }
