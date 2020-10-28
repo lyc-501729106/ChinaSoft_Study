@@ -1,0 +1,10 @@
+2020-09-21 09:32:24 com.etc.flower.serviceImpl.UserServiceImpl.getOne(UserServiceImpl.java:70) UserServiceImpl.java DEBUG 一朵花详情No value specified for parameter 1
+2020-09-22 09:44:36 com.etc.flower.serviceImpl.UserServiceImpl.addCar(UserServiceImpl.java:89) UserServiceImpl.java DEBUG 一朵花详情No value specified for parameter 1
+2020-09-28 10:14:41 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:16:36 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:18:10 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:28:17 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:30:08 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:31:04 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:324) UserServiceImpl.java DEBUG 
+2020-09-28 10:31:39 com.etc.flower.serviceImpl.UserServiceImpl.getOrder(UserServiceImpl.java:325) UserServiceImpl.java DEBUG You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tuserid = '1'' at line 1
+2020-09-29 10:46:28 com.etc.flower.serviceImpl.UserServiceImpl.getPage(UserServiceImpl.java:341) UserServiceImpl.java DEBUG / by zero

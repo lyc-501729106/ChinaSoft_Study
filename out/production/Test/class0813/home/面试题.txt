@@ -1,0 +1,9 @@
+Collection 与 Collections
+他俩都在util包下 ，
+Collection是一个接口，而Collections是一个类
+Collection这个接口它继承于Iterable；
+Collections类下有sort() 排序工具，它的底层是转换为数组来进行排序的(toArray()) , reverse() 可以降序排列。
+
+Vactor与ArrayList
+ArrayList 在util包下面 它继承于AbstractList ,它的默认初始容量为10 ，之后以1.5倍的方式增长，
+

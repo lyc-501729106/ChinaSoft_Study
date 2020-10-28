@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--     在容器中添加dog实体：id即想要从容器中获取的对象的名称，class表示此名称对应的类-->
+    <bean id="dog" class="class1026.Dog" scope="singleton" lazy-init="true" init-method="first"
+          destroy-method="second"><!-- additional collaborators and configuration for this bean go here -->
+        <constructor-arg index="0" value="haha"></constructor-arg>
+        <constructor-arg index="1" value="5"></constructor-arg>
+    </bean>
+    <bean id="dog1" class="class1026.Dog">
+        <property name="name" value="我是狗狗1"></property>
+    </bean>
+    <bean id="dog2" class="class1026.Dog">
+        <property name="name" value="我是狗狗2"></property>
+    </bean>
+    <!--    配置Boy实体对象-->
+    <bean id="boy" class="class1026.Boy">
+        <constructor-arg index="0" value="John"></constructor-arg>
+        <constructor-arg index="1" value="20"></constructor-arg>
+        <!--        依赖注入的时候name 值为当前对象的类中属性名称，ref对应的值为当前配置文件中对应的bean的id值-->
+        <property name="dog" ref="dog"></property>
+        <!--        基本数据类型，注入！！！-->
+        <property name="address" value="北京昌平邓庄"></property>
+        <!--        对象的注入！！-->
+        <property name="product" ref="pro"></property>
+        <property name="list">
+            <list>
+                <ref bean="dog"></ref>
+                <value type="java.lang.String">Jack</value>
+                <value type="int">22</value>
+            </list>
+        </property>
+        <!--        带泛型的集合注入-->
+        <property name="dogList">
+            <list>
+                <ref bean="dog1"></ref>
+                <ref bean="dog2"></ref>
+            </list>
+        </property>
+        <!--        Set集合的注入！！-->
+        <property name="set">
+            <set>
+                <value type="java.lang.String">1</value>
+                <value type="java.lang.String">2</value>
+            </set>
+        </property>
+        <!--        依赖注入map集合属性-->
+        <property name="map">
+            <map>
+                <entry key="1" value="CN"></entry>
+                <entry key="2" value-ref="dog1"></entry>
+                <entry key-ref="dog1" value="你好"></entry>
+                <entry key="3" value-ref="dog1"></entry>
+                <entry key-ref="pro" value-ref="dog2"></entry>
+                <entry key="4" value-ref="dog"></entry>
+            </map>
+        </property>
+<!--        注入带泛型的map集合属性-->
+        <property name="integerStringMap">
+            <map>
+                <entry key="1" value="aa"/>
+                <entry key="2" value="bb"/>
+                <entry key="3" value="cc"/>
+            </map>
+        </property>
+    </bean>
+    <!--    配置静态工厂模式-->
+    <bean id="product" class="class1026.StaticFactory" factory-method="getPro"></bean>
+    <!--    配置普通工厂模式-->
+    <!--    先配置一个普通工厂对象-->
+    <bean id="factory" class="class1026.NormalFactory"></bean>
+    <bean id="pro" factory-bean="factory" factory-method="getPro"></bean>
+</beans>

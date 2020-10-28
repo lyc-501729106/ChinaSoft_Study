@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="bookshop" uuid="a6d28d14-a31c-4a42-b632-a0ccc0b9491f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/bookshop</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="javademo" uuid="d8a29fc3-e11a-4714-93ee-63206303d747">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/javademo</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="flower@localhost" uuid="593ff7cd-0ac1-486f-a974-62a3763ea59b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/flower</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="myshop@localhost" uuid="810956ea-c526-4760-aaf1-eb3007642a00">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/myshop</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="192.168.121.132" uuid="55048973-903c-4df2-88c4-cd5ed08cd65a">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@192.168.121.132:1521:orcl</jdbc-url>
+    </data-source>
+  </component>
+</project>

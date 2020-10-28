@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 开启自动扫描 -->
+<!--    <context:component-scan base-package="com.chinasofti"></context:component-scan>-->
+    <!-- spring中使用aspectj包中的@Aspect注解标注当前组件为切面，
+           如果要使用改注解必须开启aspectj的自动代理模式 -->
+<!--    <aop:aspectj-autoproxy ></aop:aspectj-autoproxy>-->
+<!--    配置目标程序的bean-->
+    <bean id="target" class="class1027.Target"></bean>
+<!--    配置前置程序的bean-->
+    <bean id="before" class="class1027.Before"></bean>
+<!--    配置后置程序的bean-->
+    <bean id="after" class="class1027.After"></bean>
+<!--    配置异常通知-->
+    <bean id="myexception" class="class1027.MyException"></bean>
+<!--    配置环绕程序的bean-->
+    <bean id="arround" class="class1027.Arround"></bean>
+<!--    配置最终通知的bean-->
+    <bean id="even" class="class1027.EvenAfter"></bean>
+<!--    配置前置通知-->
+    <aop:config>
+<!--        配置切入点-->
+        <aop:pointcut id="mycut" expression="execution(* class1027.Target.getTar(*))"/>
+<!--        配置环绕通知-->
+        <aop:aspect ref="arround">
+            <aop:around method="getArround" pointcut-ref="mycut"></aop:around>
+        </aop:aspect>
+<!--        配置异常通知-->
+        <aop:aspect ref="myexception">
+            <aop:after-throwing method="getException" pointcut-ref="mycut" throwing="e"></aop:after-throwing>
+        </aop:aspect>
+<!--        配置前置通知-->
+        <aop:aspect ref="before">
+            <aop:before method="doBefore" pointcut-ref="mycut"></aop:before>
+        </aop:aspect>
+        <aop:aspect ref="after">
+            <aop:after-returning method="getAfter" pointcut-ref="mycut" returning="obj"></aop:after-returning>
+        </aop:aspect>
+<!--        配置最终通知-->
+        <aop:aspect ref="even">
+            <aop:after method="doAfter" pointcut-ref="mycut"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>

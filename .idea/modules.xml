@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookShop/BookShop.iml" filepath="$PROJECT_DIR$/BookShop/BookShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" filepath="$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Myshop/Myshop.iml" filepath="$PROJECT_DIR$/Myshop/Myshop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flowershop/flowershop.iml" filepath="$PROJECT_DIR$/flowershop/flowershop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_test/spring_test.iml" filepath="$PROJECT_DIR$/spring_test/spring_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml0915/xml0915.iml" filepath="$PROJECT_DIR$/xml0915/xml0915.iml" />
+    </modules>
+  </component>
+</project>
