@@ -26,12 +26,12 @@ public class TuserDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void addUser() {
-        this.jdbcTemplate.update(" insert into STUDENT (stu_id,STUNAME) values (?,?) ", new Object[]{4, "aaa"});
+    public void addUser(int stu_id,String stuname) {
+        jdbcTemplate.update(" insert into STUDENT (stu_id,STUNAME) values (?,?) ", new Object[]{stu_id, stuname});
     }
 
     public void updateUser(String newname, int stuid) {
-        this.jdbcTemplate.update(" update STUDENT set STUNAME = ? where  STU_ID = ?  ", newname, stuid);
+        jdbcTemplate.update(" update STUDENT set STUNAME = ? where  STU_ID = ?  ", newname, stuid);
     }
 
     public void delstu(int stuid) {
@@ -77,16 +77,5 @@ public class TuserDao {
                     }
                 }
         );
-    }
-    public static void main(String[] args) {
-        ApplicationContext context = new
-                ClassPathXmlApplicationContext("com/etc/spring/jdbc.xml");
-        TuserService ts = (TuserService) context.getBean("tuserService");
-        List<Student> students = ts.students();
-        for (Student stus :
-                students) {
-            System.out.println("stuname: " + stus.getStuname());
-            System.out.println(stus.getStuid());
-        }
     }
 }
