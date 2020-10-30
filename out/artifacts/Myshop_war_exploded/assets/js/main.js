@@ -16,8 +16,8 @@
 		if ($(this).attr('href') === pageUrl || $(this).attr('href') === '') {
 			$(this).closest('li').addClass('active');
 			$(this).parents('li').addClass('active');
-		} else if (window.location.pathname === '/' || window.location.pathname === '/index.jsp') {
-			$('.main_nav a[href="index.jsp"]').parent('li').addClass('active');
+		} else if (window.location.pathname === '/' || window.location.pathname === '/main.jsp') {
+			$('.main_nav a[href="main.jsp"]').parent('li').addClass('active');
 		}
 	});
 	/*----------------------------------------*/

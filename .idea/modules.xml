@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" filepath="$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Myshop/Myshop.iml" filepath="$PROJECT_DIR$/Myshop/Myshop.iml" />
       <module fileurl="file://$PROJECT_DIR$/flowershop/flowershop.iml" filepath="$PROJECT_DIR$/flowershop/flowershop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springMVC_test/springMVC_test.iml" filepath="$PROJECT_DIR$/springMVC_test/springMVC_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_jdbcDemo/spring_jdbcDemo.iml" filepath="$PROJECT_DIR$/spring_jdbcDemo/spring_jdbcDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_test/spring_test.iml" filepath="$PROJECT_DIR$/spring_test/spring_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/xml0915/xml0915.iml" filepath="$PROJECT_DIR$/xml0915/xml0915.iml" />

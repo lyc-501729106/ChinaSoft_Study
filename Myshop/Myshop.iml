@@ -23,5 +23,8 @@
     <orderEntry type="library" name="log4j-1.2.8 (2)" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.21 (2)" level="project" />
     <orderEntry type="library" name="Jstl (2)" level="project" />
+    <orderEntry type="library" name="spring-beans-3.2.9.RELEASE (2)" level="project" />
+    <orderEntry type="library" name="com.springsource.org.apache.commons.logging-1.1.1" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
 </module>

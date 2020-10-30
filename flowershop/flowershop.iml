@@ -24,5 +24,6 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="Jstl" level="project" />
     <orderEntry type="library" name="smartupload" level="project" />
+    <orderEntry type="library" name="spring-beans-3.2.9.RELEASE" level="project" />
   </component>
 </module>

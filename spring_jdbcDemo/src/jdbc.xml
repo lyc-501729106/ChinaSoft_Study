@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/cache"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/cache
+       http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+
+">
     <bean class="jdbcdemo.entity.Student" id="student" scope="prototype"></bean>
 <!--    将StudentServiceImpl添加进容器中-->
     <bean class="jdbcdemo.serviceImpl.StudentServiceImpl" id="studentService">
@@ -16,6 +29,26 @@
     <bean class="jdbcdemo.daoImpl.StudentDaoImpl" id="studentDao">
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
+<!--==========================================================-->
+    <!--    事务管理器的配置-->
+    <bean id="tx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--    配置事务-->
+    <tx:advice id="transactionInterceptor" transaction-manager="tx" >
+        <tx:attributes>
+            <tx:method name="add*" isolation="DEFAULT" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="regist*" isolation="DEFAULT" read-only="false" propagation="REQUIRED"/>
+            <tx:method name="update*" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="dele*" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="get*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="servicecut" expression="within(jdbcdemo.serviceImpl.StudentServiceImpl)"/>
+        <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="servicecut"/>
+    </aop:config>
+<!--    =================================================-->
 
     <!--    数据库数据源的配置-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -33,4 +66,6 @@
     <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+
+
 </beans>

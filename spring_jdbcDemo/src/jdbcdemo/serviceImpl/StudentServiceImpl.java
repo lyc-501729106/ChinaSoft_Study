@@ -77,11 +77,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public int regist(Student stu) {
         int temp = 0;
-        try {
+        for (int i = 8; i < 13; i++) {
+            if (i == 10) throw new RuntimeException();
             temp = studentDao.regist(stu);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
         return temp;
     }
 

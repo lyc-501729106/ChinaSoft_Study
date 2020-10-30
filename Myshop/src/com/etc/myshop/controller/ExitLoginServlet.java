@@ -19,6 +19,6 @@ public class ExitLoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate(); //session销毁
 //        PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        request.getRequestDispatcher("main.jsp").forward(request,response);
     }
 }
