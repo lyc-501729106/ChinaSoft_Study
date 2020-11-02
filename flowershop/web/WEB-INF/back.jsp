@@ -109,7 +109,7 @@
             <tr>
 <%--                page 当前页 --%>
                 <c:if test="${page1>1}">
-                    <a href="MoreServlet?page1=${up1}">上一页</a>
+                    <a href="more.action?page1=${up1}">上一页</a>
                 </c:if>
                 <td>用户名</td>
                 <td>购买日期</td>
@@ -132,7 +132,7 @@
     <!-- END of main wrapper -->
 <%--    添加鲜花信息需要有图片的上传，所以需要将当前提交按照上传的要求进行设置--%>
     <div align="center">
-        <form action="SmartServlet" method="post" enctype="multipart/form-data">
+        <form action="upload.action" method="post" enctype="multipart/form-data">
 <%--            enctype="multipart/form-data" 将文件以二进制的形式上传  --%>
 <%--            默认情况下，enctype的值是application/x-www-form-urlencoded，不能用于文件上传--%>
             <table border="1" align="center">
@@ -153,7 +153,7 @@
                     <td><input type="text" name="count"/></td>
                 </tr>
             </table>
-            <input type="file" name="file"/>
+            <input type="file" name="pic"/>
             <input type="submit" value="提交"/>
         </form>
     </div>

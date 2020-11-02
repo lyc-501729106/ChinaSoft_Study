@@ -120,7 +120,7 @@ function clearText(field)
                     <tr><td>Quantity</td><td><input type="text" value="${flower.count}" size="6" maxlength="2" /></td></tr>
                 </table>
                 <div class="cleaner h20"></div>
-                <a href="AddCarServlet?fid=${flower.fid}" class="button">添加到购物车</a>
+                <a href="addCar.action?fid=${flower.fid}" class="button">添加到购物车</a>
 			</div>
             <div class="cleaner h40"></div>
             

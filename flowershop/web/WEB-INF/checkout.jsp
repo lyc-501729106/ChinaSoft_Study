@@ -168,7 +168,7 @@ function cityjiaoyan() {
 
 		<h3>账单详情</h3>
 <%--        <form action="CheckoutServlet" id="" method="post">--%>
-        <form id="myform" action="CheckoutServlet" method="post">
+        <form id="myform" action="checkout.action" method="post">
 <%--        <form id="myform" >--%>
             <div class="content_half left form_field">
 				<p>姓名</p>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.mybatis.mapper.TuserMapper">
+    <!--<select id="selectBlog" resultType="Blog">
+        select * from Blog where id = #{id}
+    </select>-->
+    <insert id="addTuser">
+        insert into tuser(uname,age) values (#{0},#{1})
+    </insert>
+    <delete id="deleTuser">
+        delete from tuser where uname = #{0}
+    </delete>
+
+    <select id="getOne" resultType="Tuser">
+        select * from tuser where tuserid = #{0}
+    </select>
+</mapper>

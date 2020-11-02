@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BookShop/BookShop.iml" filepath="$PROJECT_DIR$/BookShop/BookShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChinaSoft_Study.iml" filepath="$PROJECT_DIR$/ChinaSoft_Study.iml" />
       <module fileurl="file://$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" filepath="$PROJECT_DIR$/JdbcDemo/JdbcDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Mybatis.iml" filepath="$PROJECT_DIR$/Mybatis/Mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Myshop/Myshop.iml" filepath="$PROJECT_DIR$/Myshop/Myshop.iml" />
       <module fileurl="file://$PROJECT_DIR$/flowershop/flowershop.iml" filepath="$PROJECT_DIR$/flowershop/flowershop.iml" />
       <module fileurl="file://$PROJECT_DIR$/springMVC_test/springMVC_test.iml" filepath="$PROJECT_DIR$/springMVC_test/springMVC_test.iml" />

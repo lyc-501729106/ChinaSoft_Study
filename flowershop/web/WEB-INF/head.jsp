@@ -23,12 +23,12 @@
     <li><a href="shoppingcart.jsp">购物车</a> </li>
 
     <c:if test="${tuser.role == '管理员'}">
-    <li><a href="back.jsp">后台</a></li>
+    <li><a href="go.action?go=back.jsp">后台</a></li>
     </c:if>
     <li><a href="contact.html">关于我们</a></li>
     <li><a href="faqs.html">常见问题</a></li>
     <c:if test="${tuser != null}">
-        <li><a href="ExitLogin">注销登录</a></li>
+        <li><a href="logout.action">注销登录</a></li>
     </c:if>
 </ul>
 </body>

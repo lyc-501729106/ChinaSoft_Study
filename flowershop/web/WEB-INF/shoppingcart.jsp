@@ -91,7 +91,7 @@ function checkAll(){
         }else{
             //获取到表单，并且提交表单
             var myform = document.getElementById("myform");
-            myform.action = "SubmitCarServlet";
+            myform.action = "subCar.action";
             myform.method = "post";
             myform.submit(); //提交表单
         }

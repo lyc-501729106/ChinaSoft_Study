@@ -30,9 +30,9 @@
 		<div class="login w3layouts agileits">
 			<h2>登 录</h2>
 			${result}
-			<form action="tuserServ?type=${type}" method="get">
-				<input type="text" Name="userame" placeholder="用户名" required="">
-				<input type="password" Name="Password" placeholder="密码" required="">
+			<form action="login.action?type=${type}" method="get">
+				<input type="text" name="username" placeholder="用户名" required="">
+				<input type="password" name="Password" placeholder="密码" required="">
 				<select name="role">
 					<option value="管理员">管理员</option>
 					<option value="VIP">VIP</option>

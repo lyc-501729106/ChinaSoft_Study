@@ -7,15 +7,24 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-<!--   扫描包-->
-    <context:component-scan
-            base-package="com.etc.flower.controller" />
 
-<!--    用下面这个 就可以将jsp页面放在WEB-INF 下面了，就可以访问了-->
+
+    <!--   扫描包-->
+    <context:component-scan
+            base-package="com.etc.flower.controller"/>
+
+    <!--    视图解析器-->
+    <!--    用下面这个 就可以将jsp页面放在WEB-INF 下面了，就可以访问了-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/"/>
-<!--        <property name="suffix" value=".jsp"/>-->
+        <!--        <property name="suffix" value=".jsp"/>-->
+    </bean>
+
+<!--        上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="100000"/>
     </bean>
 
 </beans>

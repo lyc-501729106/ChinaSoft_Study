@@ -162,7 +162,7 @@
                     </p>
                     <p class="add_to_cart">
                         <a href="detail.action?fid=<%=f.getFid()%>">详情</a>
-                        <a href="addcar.action?fid=<%=f.getFid()%>">添加到购物车</a>
+                        <a href="addCar.action?fid=<%=f.getFid()%>">添加到购物车</a>
                     </p>
                 </div>
 
