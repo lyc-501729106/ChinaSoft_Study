@@ -6,6 +6,8 @@ import jdbcdemo.daoImpl.StudentDaoImpl;
 import jdbcdemo.entity.Student;
 import jdbcdemo.entity.Studentnew;
 import jdbcdemo.entity.Tclass;
+import jdbcdemo.mapper.BaseDao;
+import jdbcdemo.mapper.StuOracleMapper;
 import jdbcdemo.service.StudentService;
 import jdbcdemo.util.Log;
 
@@ -42,14 +44,22 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student login(String username, String pwd) throws SQLException {
         Student stu = null;
-        try {
+        /*try {
             stu = stuOracleBao.login(username, pwd);
         } catch (Exception e) {
             //当有程序异常的时候才会写入日志
             //Logger.getLogger(StudentServiceImpl.class).debug("登录异常" + e.getMessage()); ;
             Log.mylog.debug("登录异常！" + e.getMessage());
             e.printStackTrace();
-        }
+        }*/
+        /**
+         *用mybatis来连接数据库
+         */
+        BaseDao baseDao = new BaseDao();
+        baseDao.open();
+        StuOracleMapper stuOracleMapper = baseDao.sqlSession.getMapper(StuOracleMapper.class);
+        stu = stuOracleMapper.login(username, pwd);
+        baseDao.closeResource();
         return stu;
     }
 
@@ -61,13 +71,19 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getAll() throws SQLException {
         List<Student> students = null;
-        try {
+        /*try {
             students = stuOracleBao.getAll();
         } catch (Exception e) {
             //日志
             Log.mylog.debug(e.getMessage());
             e.printStackTrace();
-        }
+        }*/
+        //用mybatis来 连接数据库
+        BaseDao baseDao = new BaseDao();
+        baseDao.open();
+        StuOracleMapper stuOracleMapper = baseDao.sqlSession.getMapper(StuOracleMapper.class);
+        students = stuOracleMapper.getAll();
+        baseDao.closeResource();
         return students;
     }
 

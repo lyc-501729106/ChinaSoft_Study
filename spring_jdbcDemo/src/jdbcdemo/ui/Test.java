@@ -7,9 +7,9 @@ public class Test {
         MainMenu mm = new MainMenu();
 //        mm.update();
 //        mm.del();
-        mm.regist();
+//        mm.regist();
 //        mm.login();
-//        mm.getAll();
+        mm.getAll();
     }
 
 }
