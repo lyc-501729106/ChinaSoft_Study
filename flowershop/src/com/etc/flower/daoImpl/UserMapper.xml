@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.flower.dao.UserMapper">
+    <!--<insert id="addTuser">
+        insert into tuser(uname,age) values (#{0},#{1})
+    </insert>
+    <delete id="deleTuser">
+        delete from tuser where uname = #{0}
+    </delete>-->
+
+    <select id="getAll" resultType="flower">
+        select * from flower limit #{0},#{1}
+    </select>
+    <select id="getOne" resultType="flower">
+        select * from flower where fid = #{0}
+    </select>
+    <select id="judegeCar" resultType="shopCar">
+        SELECT * from shopcar WHERE fid = #{1} and tuserid = #{0}
+    </select>
+    <insert id="addCar">
+            insert into shopcar(fid,tuserid) values (#{1} , #{0})
+    </insert>
+    <select id="getCar" resultType="shopCar">
+        select f.flowername flowername,f.price price,f.fid fid, f.count count,f.pic pic,s.sid sid from shopcar s , flower f where f.fid = s.fid and s.tuserid = #{0}
+    </select>
+    <select id="login" resultType="user">
+        select * from tuser where uname = #{0} and pwd = #{1} and role = #{2}
+    </select>
+    <update id="updateCount">
+        update tuser set money = money - #{0} where  tuserid = #{1}
+    </update>
+    <update id="updateFcount">
+        update flower set count = count - #{1} where fid=#{0}
+    </update>
+    <insert id="addOrder">
+        insert into forder(tuserid, sum, orderdate) values (#{0},#{1},now())
+    </insert>
+    <select id="getOid" resultType="int">
+        select max(oid) from forder
+    </select>
+    <insert id="addDetail">
+        insert into odetail(oid , fid , count ,sum) values (#{0},#{1},#{2},#{3})
+    </insert>
+    <delete id="removeCar">
+        delete from shopcar where fid = #{1} and tuserid = #{0}
+    </delete>
+</mapper>

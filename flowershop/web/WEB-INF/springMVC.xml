@@ -27,4 +27,14 @@
         <property name="maxUploadSize" value="100000"/>
     </bean>
 
+    <!-- 异常解析器（ctrl+shift+t搜索SimpleMappingExceptionResolver查看） -->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <!-- 异常映射，出现异常，则跳转到指定的视图 -->
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">exception.jsp</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>

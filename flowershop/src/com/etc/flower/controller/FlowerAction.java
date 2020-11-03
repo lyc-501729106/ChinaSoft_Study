@@ -240,11 +240,8 @@ public class FlowerAction {
                 }
                 //将需要显示在页面中的鲜花信息获取并进行存储
                 List<ShopCar> shopCarList = us.getCar(tuser);
+                System.out.println(shopCarList.toString());
                 request.setAttribute("cars", shopCarList);
-                for (ShopCar sc :
-                        shopCarList) {
-                    System.out.println(sc.getFlower().getPrice());
-                }
                 //跳转到购物车界面
 //                request.getRequestDispatcher("shoppingcart.jsp").forward(request,response);
                 result = "shoppingcart.jsp";

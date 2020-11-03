@@ -1,18 +1,14 @@
-package com.etc.flower.doaImpl;
+package com.etc.flower.daoImpl;
 
 import com.etc.flower.dao.UserDao;
 import com.etc.flower.entity.*;
-import com.sun.deploy.net.HttpRequest;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException, URISyntaxException {
@@ -31,7 +27,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
     @Override
     public Tuser login(String username, String pwd, String role) throws SQLException, URISyntaxException, IOException, ClassNotFoundException {
-        openDb();
         String sql = "select * from tuser where uname = ? and pwd = ? and role = ?";
         ps = con.prepareStatement(sql);
         ps.setString(1,username);

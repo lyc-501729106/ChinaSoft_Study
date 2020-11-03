@@ -1,9 +1,8 @@
-package com.etc.flower.doaImpl;
+package com.etc.flower.daoImpl;
 
 import com.etc.flower.dao.BaseDao;
 import com.etc.flower.util.DbInfo;
 
-import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.*;

@@ -189,15 +189,15 @@ function clearText(field)
           	</tr>
             <c:forEach var="car" items="${cars}">
 <%--               获取到库存--%>
-                <input type="hidden" value="${car.flower.count}" id = "c${car.flower.fid}"/>
+                <input type="hidden" value="${car.count}" id = "c${car.fid}"/>
             <tr bgcolor="#41581B">
-                <td><input checked type="checkbox" name="choose" value="${car.flower.fid}"/></td>
-                <td><img src="${car.flower.pic}" alt="此处是鲜花图片" /></td>
-                <td>${car.flower.flowername}</td>
-                <td align="center"><input name="count${car.flower.fid}" type="text" id="count${car.flower.fid}" value="1" size="6" maxlength="5" />
-                    <input type = "button" value="+" onclick="jia(${car.flower.fid})"/><input type="button" value="-" onclick="jian(${car.flower.fid})"/> </td>
-                <td align="right">$<input type="text" value="${car.flower.price}" id="price${car.flower.fid}" disabled="false"/></td>
-                <td align="right">$<input id="sum${car.flower.fid}" name="sum${car.flower.fid}" value="${car.flower.price}" ></input></td>
+                <td><input checked type="checkbox" name="choose" value="${car.fid}"/></td>
+                <td><img src="${car.pic}" alt="此处是鲜花图片" /></td>
+                <td>${car.flowername}</td>
+                <td align="center"><input name="count${car.fid}" type="text" id="count${car.fid}" value="1" size="6" maxlength="5" />
+                    <input type = "button" value="+" onclick="jia(${car.fid})"/><input type="button" value="-" onclick="jian(${car.fid})"/> </td>
+                <td align="right">$<input type="text" value="${car.price}" id="price${car.fid}" disabled="false"/></td>
+                <td align="right">$<input id="sum${car.fid}" name="sum${car.fid}" value="${car.price}" ></input></td>
                 <td align="center"> <a href="DeleteOneServlet?sid=${car.sid}"><img src="images/remove.png" alt="remove" /><br />删除</a> </td>
             </tr>
             </c:forEach>

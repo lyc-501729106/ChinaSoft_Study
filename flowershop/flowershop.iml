@@ -26,5 +26,6 @@
     <orderEntry type="library" name="smartupload" level="project" />
     <orderEntry type="library" name="spring-beans-3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="commons-fileupload" level="project" />
+    <orderEntry type="library" name="mybatis-3.3.0" level="project" />
   </component>
 </module>
