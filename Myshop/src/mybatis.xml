@@ -7,27 +7,20 @@
     </settings>
     <typeAliases>
 <!--        别名-->
-        <typeAlias type="com.etc.flower.entity.Flower" alias="flower"></typeAlias>
-        <typeAlias type="com.etc.flower.entity.ShopCar" alias="shopCar"></typeAlias>
-        <typeAlias type="com.etc.flower.entity.Tuser" alias="user"></typeAlias>
-        <typeAlias type="com.etc.flower.entity.Address" alias="address"></typeAlias>
+<!--        <typeAlias type="com.etc.flower.entity.Flower" alias="flower"></typeAlias>-->
     </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/flower?useSSL=false&amp;serverTimezone=CST"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/myshop?useSSL=false&amp;serverTimezone=CST"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/etc/flower/daoImpl/UserMapper.xml"/>
+        <mapper resource="com/etc/myshop/mapper/TuserMapper.xml"/>
     </mappers>
 </configuration>
-<!--dbdriver=com.mysql.cj.jdbc.Driver
-dbURL=jdbc:mysql://localhost:3306/flower?useSSL=false&serverTimezone=CST
-uname=root
-pwd=root-->

@@ -1,5 +1,6 @@
 package com.etc.flower.dao;
 
+import com.etc.flower.entity.Address;
 import com.etc.flower.entity.Flower;
 import com.etc.flower.entity.ShopCar;
 import com.etc.flower.entity.Tuser;
@@ -35,4 +36,10 @@ public interface UserMapper {
     void addDetail(int oid, int flowerid, int count, double fsum);
 
     void removeCar(int flowerid, int tuserid);
+    //获取到所有的地址
+    Address getAddress(int tuserid);
+    //添加地址
+    int addAddress(int tuserid, String address, String country, String city, String email, String phone);
+
+
 }

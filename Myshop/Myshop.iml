@@ -26,5 +26,23 @@
     <orderEntry type="library" name="spring-beans-3.2.9.RELEASE (2)" level="project" />
     <orderEntry type="library" name="com.springsource.org.apache.commons.logging-1.1.1" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/jars/mybatis-3.3.0/mybatis-3.3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/jars/mybatis-3.3.0/lib/log4j-1.2.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -45,4 +45,10 @@
     <delete id="removeCar">
         delete from shopcar where fid = #{1} and tuserid = #{0}
     </delete>
+    <select id="getAddress" resultType="address">
+        select * from address where state = 1 and tuserid = #{0}
+    </select>
+    <insert id="addAddress">
+        insert into address(tuserid, address, country, city, email, phone) values (#{0},#{1},#{2},#{3},#{4},#{5})
+    </insert>
 </mapper>

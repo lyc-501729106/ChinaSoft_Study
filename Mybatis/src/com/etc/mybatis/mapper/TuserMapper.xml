@@ -2,9 +2,51 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.etc.mybatis.mapper.TuserMapper">
-    <!--<select id="selectBlog" resultType="Blog">
-        select * from Blog where id = #{id}
-    </select>-->
+    <!--    测试choose-->
+    <select id="getF">
+        select * from  flower where 1=1
+        <choose>
+            <when test="fname!=null and fname !='' ">
+                and fname like #{fname}
+            </when>
+            <when test="type!=null and type !=''">
+                and type = #{type}
+            </when>
+        </choose>
+    </select>
+
+    <resultMap id="flowerMap1" type="Flower">
+        <id property="fid" column="tuserid"></id>
+        <result property="flowername" column="flowername"></result>
+        <association property="shopCarList" javaType="ShopCar">
+            <result property="price" column="price"></result>
+        </association>
+    </resultMap>
+    <!--<resultMap id="flowerMap" type="Flower">
+        <id property="fid" column="tuserid"></id>
+        <result property="flowername" column="flowername"></result>
+        <result property="price" column="price"></result>
+        <collection property="shopCarList" ofType="ShopCar">
+            <result property="price1" column="price"></result>
+        </collection>
+    </resultMap>-->
+    <!--    以Flower为基准对象，获取所有购物车信息-->
+    <select id="getShopCarl" resultMap="flowerMap1" resultType="Flower">
+        select s.tuserid,f.flowername,f.price from shopcar s, flower f where s.fid = f.fid
+    </select>
+
+    <!--    手动匹配一下-->
+    <resultMap id="tuserMap" type="Tuser">
+        <id property="tid" column="tuserid"></id>
+        <result property="tuserid" column="tuserid"></result>
+        <result property="uname" column="uname"></result>
+        <result property="age" column="age"></result>
+    </resultMap>
+    <!--    测试用对象做参数-->
+    <select id="getSome" resultMap="tuserMap" parameterType="Tuser">
+        select * from tuser where uname = #{uname} and tuserid = #{tid}
+    </select>
+
     <insert id="addTuser">
         insert into tuser(uname,age) values (#{0},#{1})
     </insert>
@@ -15,4 +57,5 @@
     <select id="getOne" resultType="Tuser">
         select * from tuser where tuserid = #{0}
     </select>
+
 </mapper>

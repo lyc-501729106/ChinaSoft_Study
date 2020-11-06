@@ -8,6 +8,8 @@
     <typeAliases>
 <!--        别名-->
         <typeAlias type="com.etc.mybatis.entity.Tuser" alias="Tuser"></typeAlias>
+        <typeAlias type="com.etc.mybatis.entity.Flower" alias="Flower"></typeAlias>
+        <typeAlias type="com.etc.mybatis.entity.ShopCar" alias="ShopCar"></typeAlias>
     </typeAliases>
     <environments default="development">
         <environment id="development">

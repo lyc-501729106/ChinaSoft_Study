@@ -7,7 +7,16 @@ package com.etc.mybatis.entity;
 public class Tuser {
     private String uname;
     private int age;
+    private int tid;
+    private int tuserid;
 
+    public int getTuserid() {
+        return tuserid;
+    }
+
+    public void setTuserid(int tuserid) {
+        this.tuserid = tuserid;
+    }
 
     public String getUname() {
         return uname;
@@ -15,6 +24,14 @@ public class Tuser {
 
     public void setUname(String uname) {
         this.uname = uname;
+    }
+
+    public int getTid() {
+        return tid;
+    }
+
+    public void setTid(int tid) {
+        this.tid = tid;
     }
 
     public int getAge() {

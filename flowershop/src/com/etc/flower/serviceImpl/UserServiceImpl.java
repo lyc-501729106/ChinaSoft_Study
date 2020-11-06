@@ -129,36 +129,32 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public Address getAddress(Tuser tuser) throws SQLException {
-        UserDao dao = new UserDaoImpl();
+        UserDao dao = new UserDaoMybaitsImpl();
         Address address = null;
         try {
-            ((UserDaoImpl) dao).openTransaction();
+            ((UserDaoMybaitsImpl) dao).openDb();
             address = dao.getAddress(tuser);
-            ((UserDaoImpl) dao).commitTransaction();
         } catch (Exception e) {
             e.printStackTrace();
             Log.mylog.debug("显示默认地址出错" + e.getMessage());
-            ((UserDaoImpl) dao).rollbackTransaction();
         } finally {
-            ((UserDaoImpl) dao).closeResource();
+            ((UserDaoMybaitsImpl) dao).closeResource();
         }
         return address;
     }
 
     @Override
     public int addAddress(Tuser tuser, Address address) throws SQLException {
-        UserDao dao = new UserDaoImpl();
+        UserDao dao = new UserDaoMybaitsImpl();
         int no = 0;
         try {
-            ((UserDaoImpl) dao).openTransaction();
+            ((UserDaoMybaitsImpl) dao).openDb();
             no = dao.addAddress(tuser, address);
-            ((UserDaoImpl) dao).commitTransaction();
         } catch (Exception e) {
             e.printStackTrace();
             Log.mylog.debug("添加地址出错" + e.getMessage());
-            ((UserDaoImpl) dao).rollbackTransaction();
         } finally {
-            ((UserDaoImpl) dao).closeResource();
+            ((UserDaoMybaitsImpl) dao).closeResource();
         }
         return no;
     }

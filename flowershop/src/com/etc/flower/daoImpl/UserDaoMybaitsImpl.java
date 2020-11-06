@@ -66,12 +66,15 @@ public class UserDaoMybaitsImpl extends BaseDaoMybaitsImpl implements UserDao {
 
     @Override
     public Address getAddress(Tuser tuser) throws SQLException {
-        return null;
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        Address address = userMapper.getAddress(tuser.getTuserid());
+        return address;
     }
 
     @Override
     public int addAddress(Tuser tuser, Address address) throws SQLException {
-        return 0;
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        return userMapper.addAddress(tuser.getTuserid(),address.getAddress(),address.getCountry(),address.getCity(),address.getEmail(),address.getPhone());
     }
 
     @Override
